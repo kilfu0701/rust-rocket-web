@@ -79,7 +79,7 @@ pub fn json<'r>(request: &'r Request, _data: Data) -> Outcome<'r> {
 
 #[get("/test")]
 pub fn test() -> Json<Task> {
-    Json(Task{ name: String::from("123") })
+    Json(Task{ name: String::from("1234") })
 }
 
 #[get("/json2")]
