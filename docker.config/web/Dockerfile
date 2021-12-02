@@ -1,7 +1,6 @@
-FROM alpine:3.12
+FROM alpine:3.15
 
-RUN apk add --no-cache ca-certificates gcc
-RUN apk add --no-cache ca-certificates musl-dev
+RUN apk add --no-cache ca-certificates gcc musl-dev
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
