@@ -1,6 +1,5 @@
-use rocket::{Request, Route, route};
-use rocket::data::{Data};
-use rocket::http::{Status, Method::{Get, Post}};
+use rocket::Route;
+use rocket::http::Method::Get;
 use rust_rocket_web::controllers::{top_controller, member_controller};
 
 pub fn handler() -> Vec<Route> {
@@ -10,6 +9,7 @@ pub fn handler() -> Vec<Route> {
         top_controller::login_action,
         top_controller::test,
         top_controller::json2,
+        member_controller::profile,
     ];
 
     // by using Route::new

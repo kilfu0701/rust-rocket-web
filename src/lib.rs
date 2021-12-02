@@ -2,5 +2,10 @@
 
 #[macro_use] extern crate rocket;
 
-pub mod controllers;
+#[macro_use] extern crate diesel;
 
+pub mod controllers;
+pub mod db;
+pub mod repositories;
+pub mod schema;
+pub mod models;
