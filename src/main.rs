@@ -5,7 +5,7 @@ use rocket_contrib::templates::Template;
 
 #[macro_use] extern crate rocket;
 #[macro_use] extern crate dotenv;
-#[macro use] extern crate diesel;
+#[macro_use] extern crate diesel;
 
 mod router;
 mod db;

@@ -1,15 +1,19 @@
 #![allow(proc_macro_derive_resolution_fallback)]
 
-use serde::{Serialize, Deserialize};
+//use serde::{Serialize, Deserialize};
 use diesel::prelude::*;
+use diesel::sql_types::*;
 use crate::schema::users;
 
-
-#[derive(Queryable, AsChangeset, Serialize, Deserialize, Debug)]
-#[table_name="users"]
+//#[table_name = "users"]
+#[derive(Queryable, Debug)]
 pub struct User {
-    pub id: i32,
+    pub id: u64,
     pub username: String,
     pub password: String,
     pub email: String,
+    pub description: Option<String>,
+    pub authenticated_at: Option<chrono::naive::NaiveDateTime>,
+    pub created_at: Option<chrono::naive::NaiveDateTime>,
+    pub deleted_at: Option<chrono::naive::NaiveDateTime>,
 }

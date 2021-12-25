@@ -20,7 +20,7 @@ pub fn index<'r>(request: &'r Request, _data: Data) -> Outcome<'r> {
 
 // login page
 #[get("/member/<id>")]
-pub fn profile(id: i32, connection: Connection) -> Template {
+pub fn profile(id: u64, connection: Connection) -> Template {
     user_repository::get_user(id, &connection)
         .map(|user| Json(user))
         .map_err(|error| error_status(error));
